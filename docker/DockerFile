@@ -1,0 +1,9 @@
+FROM postgres
+
+ENV POSTGRES_DB=DB
+ENV POSTGRES_USER=Esper
+ENV POSTGRES_PASSWORD=123
+
+RUN mkdir -p /docker-entrypoint-initdb.d
+
+COPY init/* /docker-entrypoint-initdb.d

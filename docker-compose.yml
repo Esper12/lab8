@@ -1,0 +1,19 @@
+version: "3"
+services:
+
+  docker:
+    build:
+      context: ./docker
+      dockerfile: DockerFile
+    image: postgers
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: db
+      POSTGRES_USER: esper
+      POSTGRES_PASSWORD: 123
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+    - 8080:8080
